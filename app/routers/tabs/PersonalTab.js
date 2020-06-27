@@ -5,7 +5,7 @@
 import React from 'react';
 import {Text, Button} from 'react-native';
 
-const PersonalScreen: () => React = ({navigation}) => {
+const PersonalTab: () => React = ({navigation}) => {
   return (
     <>
       <Text>个人中心</Text>
@@ -14,4 +14,4 @@ const PersonalScreen: () => React = ({navigation}) => {
   );
 };
 
-export default PersonalScreen;
+export default PersonalTab;

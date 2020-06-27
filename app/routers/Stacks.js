@@ -5,6 +5,7 @@ import Tabs from './Tabs';
 import QrCodeScreen from '../views/QrCodeScreen';
 import FaceRecognitionScreen from '../views/FaceRecognitionScreen';
 import SetScreen from '../views/SetScreen';
+import LinkingScreen from '../views/LinkingScreen';
 
 /**
  * 定义所有的导航
@@ -21,6 +22,7 @@ const Stacks: () => React = () => {
           component={FaceRecognitionScreen}
         />
         <Stack.Screen name={'SetScreen'} component={SetScreen} />
+        <Stack.Screen name={'LinkingScreen'} component={LinkingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

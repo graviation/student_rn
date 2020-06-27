@@ -4,9 +4,8 @@
 
 import React from 'react';
 import {Text, Button} from 'react-native';
-import TransparentStatusBar from '../components/TransparentStatusBar';
 
-const IndexScreen: () => React = ({navigation}) => {
+const IndexTab: () => React = ({navigation}) => {
   return (
     <>
       <Text>首页</Text>
@@ -18,8 +17,12 @@ const IndexScreen: () => React = ({navigation}) => {
         title={'人脸'}
         onPress={() => navigation.navigate('FaceRecognitionScreen')}
       />
+      <Button
+        title={'打开其它APP测试'}
+        onPress={() => navigation.navigate('LinkingScreen')}
+      />
     </>
   );
 };
 
-export default IndexScreen;
+export default IndexTab;
