@@ -21,6 +21,10 @@ const IndexTab: () => React = ({navigation}) => {
         title={'打开其它APP测试'}
         onPress={() => navigation.navigate('LinkingScreen')}
       />
+      <Button
+        title={'聊天室'}
+        onPress={() => navigation.navigate('ChatRoomScreen')}
+      />
     </>
   );
 };
