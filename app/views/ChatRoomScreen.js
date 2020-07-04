@@ -3,7 +3,8 @@
  */
 
 import React, {useState, useCallback, useEffect} from 'react';
-import {GiftedChat} from 'react-native-gifted-chat';
+import {View, Text} from 'react-native';
+import {GiftedChat, Send} from 'react-native-gifted-chat';
 
 const ChatRoomScreen: () => React = ({navigation}) => {
   const [messages, setMessages] = useState([]);
@@ -19,7 +20,7 @@ const ChatRoomScreen: () => React = ({navigation}) => {
           name: 'React Native',
           avatar: 'https://placeimg.com/140/140/any',
         },
-        image: 'http://h1.ioliu.cn/bing/FreshSalt_ZH-CN12818759319_640x480.jpg',
+        // image: 'http://h1.ioliu.cn/bing/FreshSalt_ZH-CN12818759319_640x480.jpg',
         sent: true,
         // Mark the message as received, using two tick
         received: true,
@@ -45,7 +46,19 @@ const ChatRoomScreen: () => React = ({navigation}) => {
       }}
       dateFormat={'YYYY-MM-DD'}
       timeFormat={'HH:mm'}
-      locale={'zh'}
+      placeholder={'输入信息...'}
+      renderUsernameOnMessage={true}
+      scrollToBottom={false}
+      alignTop={true}
+      renderSend={(props) => {
+        return (
+          <Send {...props}>
+            <View style={{marginRight: 10, marginBottom: 15}}>
+              <Text>发送</Text>
+            </View>
+          </Send>
+        );
+      }}
     />
   );
 };

@@ -1,5 +1,10 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  TransitionSpecs,
+  HeaderStyleInterpolators,
+  TransitionPresets,
+} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Tabs from './Tabs';
 import QrCodeScreen from '../views/QrCodeScreen';
@@ -15,7 +20,15 @@ const Stack = createStackNavigator();
 const Stacks: () => React = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode={'none'}>
+      <Stack.Navigator
+        initialRouteName="Tabs"
+        screenOptions={({route, navigation}) => ({
+          headerShown: false,
+          gestureEnabled: true,
+          cardOverlayEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        })}
+        headerMode={'none'}>
         <Stack.Screen name={'Tabs'} component={Tabs} />
         <Stack.Screen name={'QrCodeScreen'} component={QrCodeScreen} />
         <Stack.Screen
