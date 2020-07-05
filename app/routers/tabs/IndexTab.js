@@ -2,13 +2,25 @@
  * 首页
  */
 
-import React from 'react';
-import {Text, Button} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Button, TouchableOpacity, Dimensions, Platform} from 'react-native';
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+  ScaledSheet,
+} from 'react-native-size-matters';
+import {createAnimatableComponent, View, Text} from 'react-native-animatable';
 
 const IndexTab: () => React = ({navigation}) => {
   return (
-    <>
+    <View style={styles.content_style} animation={'fadeIn'} useNativeDriver>
       <Text>首页</Text>
+      <TouchableOpacity
+        style={styles.button_style}
+        onPress={() => navigation.navigate('QrCodeScreen')}>
+        <Text>二维码</Text>
+      </TouchableOpacity>
       <Button
         title={'二维码'}
         onPress={() => navigation.navigate('QrCodeScreen')}
@@ -25,8 +37,24 @@ const IndexTab: () => React = ({navigation}) => {
         title={'聊天室'}
         onPress={() => navigation.navigate('ChatRoomScreen')}
       />
-    </>
+    </View>
   );
 };
+
+const styles = ScaledSheet.create({
+  content_style: {
+    flex: 1,
+    marginHorizontal: '5@s',
+  },
+  button_style: {
+    width: '70@s',
+    height: '30@vs',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '10@ms',
+    color: '#000000',
+    backgroundColor: '#ff461f',
+  },
+});
 
 export default IndexTab;

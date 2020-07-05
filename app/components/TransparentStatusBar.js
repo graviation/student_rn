@@ -5,7 +5,7 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
 
-const TransparentStatusBar: () => React$Node = () => {
+const TransparentStatusBar: () => React = () => {
   return (
     <StatusBar
       barStyle={'light-content'}

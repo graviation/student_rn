@@ -6,7 +6,7 @@ import React from 'react';
 import {View, ToastAndroid} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 
-const FaceRecognitionScreen: () => React = () => {
+const FaceRecognitionScreen: () => React = ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: '#000'}}>
       <RNCamera
@@ -20,8 +20,13 @@ const FaceRecognitionScreen: () => React = () => {
         } // 确定是否存在某种面部特征
         pauseAfterCapture={false}
         onFaceDetectionError={(error) => {
-          console.log('error => ', error);
-          console.log('error.type => ', error.type);
+          // console.log('error => ', error);
+          // console.log('error.type => ', error.type);
+          ToastAndroid.showWithGravity(
+            '人脸检测器无法运行, 设备不支持',
+            ToastAndroid.LONG,
+            ToastAndroid.CENTER,
+          );
         }}
         onFacesDetected={(face) => {
           const faceData = face.faces[0];

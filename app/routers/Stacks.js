@@ -12,6 +12,7 @@ import FaceRecognitionScreen from '../views/FaceRecognitionScreen';
 import SetScreen from '../views/SetScreen';
 import LinkingScreen from '../views/LinkingScreen';
 import ChatRoomScreen from '../views/ChatRoomScreen';
+import CarouselScreen from '../views/CarouselScreen';
 
 /**
  * 定义所有的导航
@@ -38,6 +39,7 @@ const Stacks: () => React = () => {
         <Stack.Screen name={'SetScreen'} component={SetScreen} />
         <Stack.Screen name={'LinkingScreen'} component={LinkingScreen} />
         <Stack.Screen name={'ChatRoomScreen'} component={ChatRoomScreen} />
+        <Stack.Screen name={'CarouselScreen'} component={CarouselScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
