@@ -5,6 +5,7 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import {View, Text, Dimensions} from 'react-native';
 import {GiftedChat, Send} from 'react-native-gifted-chat';
+import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -75,8 +76,17 @@ const ChatRoomScreen: () => React = ({navigation}) => {
     );
   }, []);
 
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView
+      edges={['right', 'bottom', 'left']}
+      style={{
+        flex: 1,
+        backgroundColor: 'blue',
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}>
       <View
         style={{
           flexDirection: 'row',
@@ -89,6 +99,7 @@ const ChatRoomScreen: () => React = ({navigation}) => {
           name={'chevron-left'}
           size={moderateScale(22)}
           color={'#fff'}
+          onPress={() => navigation.goBack()}
         />
         <Text
           numberOfLines={1}
@@ -119,7 +130,7 @@ const ChatRoomScreen: () => React = ({navigation}) => {
           );
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

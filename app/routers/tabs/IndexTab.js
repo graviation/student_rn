@@ -3,41 +3,52 @@
  */
 
 import React, {useEffect, useState} from 'react';
-import {Button, TouchableOpacity, Dimensions, Platform} from 'react-native';
+import {
+  Button,
+  TouchableOpacity,
+  Dimensions,
+  Platform,
+  View,
+  Text,
+} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   scale,
   verticalScale,
   moderateScale,
   ScaledSheet,
 } from 'react-native-size-matters';
-import {createAnimatableComponent, View, Text} from 'react-native-animatable';
 
 const IndexTab: () => React = ({navigation}) => {
   return (
-    <View style={styles.content_style} animation={'fadeIn'} useNativeDriver>
-      <Text>首页</Text>
-      <TouchableOpacity
-        style={styles.button_style}
-        onPress={() => navigation.navigate('QrCodeScreen')}>
-        <Text>二维码</Text>
-      </TouchableOpacity>
-      <Button
-        title={'二维码'}
-        onPress={() => navigation.navigate('QrCodeScreen')}
-      />
-      <Button
-        title={'人脸'}
-        onPress={() => navigation.navigate('FaceRecognitionScreen')}
-      />
-      <Button
-        title={'打开其它APP测试'}
-        onPress={() => navigation.navigate('LinkingScreen')}
-      />
-      <Button
-        title={'聊天室'}
-        onPress={() => navigation.navigate('ChatRoomScreen')}
-      />
-    </View>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={styles.content_style} animation={'fadeIn'} useNativeDriver>
+        <Text>
+          首页首页首页首页首页首页首页首页首页首页首页首页首页首页首页
+        </Text>
+        <TouchableOpacity
+          style={styles.button_style}
+          onPress={() => navigation.navigate('QrCodeScreen')}>
+          <Text>二维码</Text>
+        </TouchableOpacity>
+        <Button
+          title={'二维码'}
+          onPress={() => navigation.navigate('QrCodeScreen')}
+        />
+        <Button
+          title={'人脸'}
+          onPress={() => navigation.navigate('FaceRecognitionScreen')}
+        />
+        <Button
+          title={'打开其它APP测试'}
+          onPress={() => navigation.navigate('LinkingScreen')}
+        />
+        <Button
+          title={'聊天室'}
+          onPress={() => navigation.navigate('ChatRoomScreen')}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
