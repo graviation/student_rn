@@ -12,7 +12,10 @@ const TVPlayScreen: () => React = ({route, navigation}) => {
   const [refreshing, setRefreshing] = useState(true);
   return (
     <ScrollView
-      contentContainerStyle={{flex: 1, backgroundColor: '#000'}}
+      contentContainerStyle={{
+        flex: 1,
+        backgroundColor: refreshing ? '#fff' : '#000',
+      }}
       refreshControl={
         <RefreshControl
           refreshing={refreshing}
@@ -22,7 +25,6 @@ const TVPlayScreen: () => React = ({route, navigation}) => {
         />
       }>
       <TransparentStatusBar />
-      <Text>加载中</Text>
       <Video
         style={{position: 'absolute', top: 0, left: 0, bottom: 0, right: 0}}
         allowsExternalPlayback={false}
