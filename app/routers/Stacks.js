@@ -13,6 +13,7 @@ import SetScreen from '../views/SetScreen';
 import LinkingScreen from '../views/LinkingScreen';
 import ChatRoomScreen from '../views/ChatRoomScreen';
 import CarouselScreen from '../views/CarouselScreen';
+import TVPlayScreen from '../views/TVPlayScreen';
 
 /**
  * 定义所有的导航
@@ -40,6 +41,7 @@ const Stacks: () => React = () => {
         <Stack.Screen name={'LinkingScreen'} component={LinkingScreen} />
         <Stack.Screen name={'ChatRoomScreen'} component={ChatRoomScreen} />
         <Stack.Screen name={'CarouselScreen'} component={CarouselScreen} />
+        <Stack.Screen name={'TVPlayScreen'} component={TVPlayScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
