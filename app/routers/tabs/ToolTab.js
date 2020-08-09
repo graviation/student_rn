@@ -12,7 +12,12 @@ import {
   Dimensions,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
+import {
+  moderateScale,
+  scale,
+  verticalScale,
+  ScaledSheet,
+} from 'react-native-size-matters';
 import TransparentStatusBar from '../../components/TransparentStatusBar';
 import AppColors from '../../utils/AppColors';
 
@@ -55,49 +60,38 @@ const ToolTab: () => React = ({navigation}) => {
         );
       })}
       <Image
-        style={{
-          width: moderateScale(60),
-          height: moderateScale(60),
-        }}
-        resizeMode={'contain'}
-        source={{
-          uri: 'https://upload.wikimedia.org/wikipedia/zh/6/65/CCTV-1_Logo.png',
-        }}
-      />
-      <Image
-        style={{
-          width: moderateScale(60),
-          height: moderateScale(60),
-        }}
+        style={styles.imageStyle}
         resizeMode={'contain'}
         source={{
           uri:
-            'https://upload.wikimedia.org/wikipedia/zh/f/fd/CCTV-10_Logo.png',
+            'https://p5.img.cctvpic.com/photoAlbum/page/performance/img/2018/7/3/1530586773068_87.png',
         }}
       />
       <Image
-        style={{
-          width: moderateScale(60),
-          height: moderateScale(50),
-        }}
+        style={styles.imageStyle}
         resizeMode={'contain'}
         source={{
           uri:
-            'https://upload.wikimedia.org/wikipedia/zh/thumb/3/34/CCTV-2_Logo.svg/800px-CCTV-2_Logo.svg.png',
+            'https://p3.img.cctvpic.com/photoAlbum/page/performance/img/2018/7/3/1530586768395_210.png',
         }}
       />
       <Image
-        style={{
-          width: moderateScale(60),
-          height: moderateScale(60),
-        }}
+        style={styles.imageStyle}
         resizeMode={'contain'}
         source={{
-          uri: 'https://upload.wikimedia.org/wikipedia/zh/3/34/CCTV-3_Logo.png',
+          uri:
+            'https://p4.img.cctvpic.com/photoAlbum/page/performance/img/2018/7/3/1530586763825_455.png',
         }}
       />
     </SafeAreaView>
   );
 };
+
+const styles = ScaledSheet.create({
+  imageStyle: {
+    height: '24@vs',
+    marginTop: '15@vs',
+  },
+});
 
 export default ToolTab;
