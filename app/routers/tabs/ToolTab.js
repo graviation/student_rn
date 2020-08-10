@@ -24,15 +24,27 @@ import AppColors from '../../utils/AppColors';
 const {width, height} = Dimensions.get('window');
 const items = [
   {id: 1, title: 'CCTV 1', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8'},
-  {id: 2, title: 'CCTV 2', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8'},
-  {id: 3, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/btv10.m3u8'},
+  {id: 2, title: 'CCTV 2', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 3, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 4, title: 'CCTV 4', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv4hd.m3u8'},
   {
-    id: 4,
+    id: 5,
+    title: 'CCTV 5',
+    m3u8: 'http://223.110.243.136/PLTV/3/224/3221227166/index.m3u8',
+  },
+  {id: 55, title: 'CCTV 5+', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv5phd.m3u8'},
+  {id: 6, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 7, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 8, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 9, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {id: 10, title: 'CCTV 3', m3u8: 'http://ivi.bupt.edu.cn/hls/cctv2hd.m3u8'},
+  {
+    id: 1114,
     title: 'IPTV',
     m3u8: 'https://iptv-org.github.io/iptv/channels/cn.m3u',
   },
   {
-    id: 5,
+    id: 1115,
     title: '直播中国',
     m3u8:
       'https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001',
